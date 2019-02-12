@@ -15,7 +15,6 @@ WhiteBox Audit Extension
 - [Requirements](#requirements)
 - [Compilation](#compilation)
 - [Debuging](#debuging)
-- [Changelog](#changelog)
 
 ## Features
 
@@ -41,9 +40,3 @@ In this version (0.0.1) you must debug the extension to use it.
 * Run your command from the command palette by pressing (`Ctrl+Shift+P` or `Cmd+Shift+P` on Mac) and typing `WhiteBoxAudit`.
 * **Enjoy!**
 
-
-## Changelog
-
-### 0.0.1
-
-Initial release of WhiteBoxAudit Extension
