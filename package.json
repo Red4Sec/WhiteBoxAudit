@@ -6,6 +6,11 @@
 	"publisher": "red4sec",
 	"engines": { "vscode": "^1.31.0" },
 	"categories": [ "Other" ],
+	"repository": 
+	{
+		"type": "git",
+		"url": "https://github.com/Red4Sec/WhiteBoxAudit"
+	},
 	"activationEvents": 
 	[
 		"onCommand:extension.WhiteBoxAudit.ReviewSomething" ,
