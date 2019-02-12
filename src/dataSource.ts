@@ -17,21 +17,18 @@ entries =
     {
         "main.go":
         {
+            "lines": 10,
             "audit":
             [
                 {
                     "from": 0,
                     "length": 2,
-                    "size": 1000,
-                    "type":"line",
                     "message":"Reviewed",
                     "style":"good"
                 },
                 {
                     "from": 3,
                     "length": 4,
-                    "size": 1000,
-                    "type":"line",
                     "message":"There are one vuln",
                     "style":"something"
                 }
