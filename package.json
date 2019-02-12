@@ -11,6 +11,7 @@
 		"type": "git",
 		"url": "https://github.com/Red4Sec/WhiteBoxAudit"
 	},
+	"homepage": "https://github.com/Red4Sec/WhiteBoxAudit",
 	"activationEvents": 
 	[
 		"onCommand:extension.WhiteBoxAudit.ReviewSomething" ,
