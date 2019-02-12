@@ -3,6 +3,7 @@
 	"displayName": "WhiteBoxAudit",
 	"description": "VSCode Plugin for White Box Audits",
 	"version": "0.0.1",
+	"publisher": "red4sec",
 	"engines": { "vscode": "^1.31.0" },
 	"categories": [ "Other" ],
 	"activationEvents": 
