@@ -1,12 +1,20 @@
-# WhiteBox Audit Extension
+<p align="center">
+  <a href="https://red4sec.com" target="_blank"><img src="https://red4sec.com/images/logo.png" width="200px"></a>
+</p>
+<h1 align="center">
+WhiteBox Audit Extension
+</h1>
 
-Whitebox Audit is an extension for visual code that will help you in your white box audit tasks.
+<p align="center">
+ Whitebox Audit is an extension for visual code that will help you in your white box audit tasks.
+</p>
 
 ## Table of Contents
 
 - [Features](#features)
 - [Requirements](#requirements)
-- [Installation](#installation)
+- [Compilation](#compilation)
+- [Debuging](#debuging)
 - [Changelog](#changelog)
 
 ## Features
@@ -20,12 +28,14 @@ This extension will allow you to keep track of both the audited files and the is
 ![OK](https://i.imgur.com/sHpdlc7.png)
 
 ## Requirements
+No requirements needed
 
-Make sure you have Node.js installed.
+## Compilation
+Make sure you have Node.js installed. (Only for devs)
 
-## Installation
+## Debuging
 
-In this version (1.0.0) you must debug the extension to use it.
+In this version (0.0.1) you must debug the extension to use it.
 
 * Press `F5` to open a new window with your extension loaded.
 * Run your command from the command palette by pressing (`Ctrl+Shift+P` or `Cmd+Shift+P` on Mac) and typing `WhiteBoxAudit`.
@@ -34,6 +44,6 @@ In this version (1.0.0) you must debug the extension to use it.
 
 ## Changelog
 
-### 1.0.0
+### 0.0.1
 
 Initial release of WhiteBoxAudit Extension
