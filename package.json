@@ -1,0 +1,93 @@
+{
+	"name": "whiteboxaudit",
+	"displayName": "WhiteBoxAudit",
+	"description": "VSCode Plugin for White Box Audits",
+	"version": "0.0.1",
+	"engines": { "vscode": "^1.31.0" },
+	"categories": [ "Other" ],
+	"activationEvents": 
+	[
+		"onCommand:extension.WhiteBoxAudit.ReviewSomething" ,
+		"onCommand:extension.WhiteBoxAudit.ReviewGood" ,
+		"onView:whiteboxexplorer"
+	],
+	"main": "./out/extension.js",
+	"contributes": 
+	{
+		"views": 
+		{
+			"explorer": 
+			[
+				{
+					"id": "whiteboxexplorer",
+					"name": "White Box Audit"
+				}
+			]
+		},
+		"menus": 
+		{
+			"view/title": 
+			[
+				{
+					"command": "whiteboxauditExplorer.refresh",
+					"when": "view == whiteboxexplorer",
+					"group": "navigation"
+				}
+			]
+		},
+		"configuration": 
+		{
+			"title": "WhiteBoxAudit",
+			"properties": 
+			{
+				"goodColor":
+				{
+					"type": "string",
+					"default": "#00FF0019",
+					"description": "Color for good review"
+				},
+				"somethingColor":
+				{
+					"type": "string",
+					"default": "#FF000019",
+					"description": "Color for something found"
+				}
+			}
+		},
+		"commands": 
+		[
+			{
+				"command": "whiteboxauditExplorer.refresh",
+				"title": "WhiteBox Audit - Refresh",
+				"icon": {
+					"light": "resources/light/refresh.svg",
+					"dark": "resources/dark/refresh.svg"
+				}
+			},
+			{
+				"command": "extension.WhiteBoxAudit.ReviewGood",
+				"title": "WhiteBox Audit - Reviewed"
+			},
+			{
+				"command": "extension.WhiteBoxAudit.ReviewSomething",
+				"title": "WhiteBox Audit - Something was found"
+			}
+		]
+	},
+	"scripts": 
+	{
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "npm run compile && node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": 
+	{
+		"typescript": "^3.3.1",
+		"vscode": "^1.1.28",
+		"tslint": "^5.12.1",
+		"@types/node": "^8.10.25",
+		"@types/mocha": "^2.2.42"
+	}
+}
