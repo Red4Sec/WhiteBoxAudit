@@ -47,6 +47,12 @@
 			"title": "WhiteBoxAudit",
 			"properties": 
 			{
+				"askMessageForGood":
+				{
+					"type": "boolean",
+					"default": "true",
+					"description": "Ask messages for good review"
+				},
 				"goodColor":
 				{
 					"type": "string",

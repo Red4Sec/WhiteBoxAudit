@@ -17,6 +17,8 @@ export function activate(context: ExtensionContext)
 
 	refreshEntries();
 	
+	const config = workspace.getConfiguration();
+
 	var explorer : ExplorerProvider = new ExplorerProvider(context, dataSourcePath);
 	window.registerTreeDataProvider('whiteboxexplorer', explorer);
 
@@ -165,11 +167,21 @@ export function activate(context: ExtensionContext)
 
 		// Set values
 
-		var message = await window.showInputBox
-		({
-			value: messageHint,
-			placeHolder: 'Please describe your review'
-		});
+		var message = messageHint;
+
+		if (!isGood || !config.has('askMessageForGood') || config.get('askMessageForGood'))
+		{
+			var msgRet = await window.showInputBox
+			({
+				value: messageHint,
+				placeHolder: 'Please describe your review'
+			});
+
+			if (msgRet !== undefined)
+			{
+				message = msgRet;
+			}
+		}
 
 		var joined : boolean = false;
 		entry.lines =  activeEditor.document.lineCount;
