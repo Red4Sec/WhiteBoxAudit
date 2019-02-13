@@ -13,6 +13,7 @@ WhiteBox Audit Extension
 
 - [Features](#features)
 - [Requirements](#requirements)
+- [Installation](#installation)
 - [Compilation](#compilation)
 - [Debuging](#debuging)
 
@@ -23,11 +24,16 @@ This extension will allow you to keep track of both the audited files and the is
 ![Explorer](https://i.imgur.com/jDvjAa1.png)
 ![Menu](https://i.imgur.com/XMFyta5.png)
 
-![Bug](https://i.imgur.com/Gb6if9C.png)
-![OK](https://i.imgur.com/sHpdlc7.png)
+![Working](https://i.imgur.com/viryjhh.png)
 
 ## Requirements
 No requirements needed
+
+## Installation
+Download last release from: https://github.com/Red4Sec/WhiteBoxAudit/releases
+
+Open your Visual Code and select Install the extension from vsix:
+![Installation](https://i.imgur.com/DyjEYPu.png)
 
 ## Compilation
 Make sure you have Node.js installed. (Only for devs)
