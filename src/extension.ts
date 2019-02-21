@@ -26,19 +26,20 @@ export function activate(context: ExtensionContext)
 	// Now provide the implementation of the command with registerCommand
 	// The commandId parameter must match the command field in package.json
 	
-	let disposable = commands.registerCommand('extension.WhiteBoxAudit.ReviewSomething', function () 
+	context.subscriptions.push(commands.registerCommand('extension.WhiteBoxAudit.ReviewSomething', function () 
 	{
 		review(false);
-	});
+	}));
 
-	context.subscriptions.push(disposable);
-
-	disposable = commands.registerCommand('extension.WhiteBoxAudit.ReviewGood', function () 
+	context.subscriptions.push(commands.registerCommand('extension.WhiteBoxAudit.ReviewGood', function () 
 	{
 		review(true);
-	});
+	}));
 
-	context.subscriptions.push(disposable);
+	context.subscriptions.push(commands.registerCommand('whiteboxauditExplorer.tongleView', function () 
+	{
+		explorer.tongleView();
+	}));
 
 	let activeEditor = window.activeTextEditor;
 

@@ -39,6 +39,11 @@
 					"command": "whiteboxauditExplorer.refresh",
 					"when": "view == whiteboxexplorer",
 					"group": "navigation"
+				},
+				{
+					"command": "whiteboxauditExplorer.tongleView",
+					"when": "view == whiteboxexplorer",
+					"group": "navigation"
 				}
 			]
 		},
@@ -70,9 +75,19 @@
 		"commands": 
 		[
 			{
+				"command": "whiteboxauditExplorer.tongleView",
+				"title": "WhiteBox Audit - Tongle View",
+				"icon": 
+				{
+					"light": "resources/light/view.svg",
+					"dark": "resources/dark/view.svg"
+				}
+			},
+			{
 				"command": "whiteboxauditExplorer.refresh",
 				"title": "WhiteBox Audit - Refresh",
-				"icon": {
+				"icon": 
+				{
 					"light": "resources/light/refresh.svg",
 					"dark": "resources/dark/refresh.svg"
 				}

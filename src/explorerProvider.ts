@@ -16,6 +16,7 @@ type WhiteBoxFileEntryInfoRaw = { length: number , audited: number , something :
 
 export class ExplorerProvider implements TreeDataProvider<FileEntry> 
 {
+    private _showAllItems: boolean = true;
 	private _onDidChangeTreeData: EventEmitter<FileEntry | undefined> = new EventEmitter<FileEntry | undefined>();
 	readonly onDidChangeTreeData: Event<FileEntry | undefined> = this._onDidChangeTreeData.event;
 
@@ -33,6 +34,14 @@ export class ExplorerProvider implements TreeDataProvider<FileEntry>
 
     public refresh() : void 
     {
+        refreshEntries();
+        this._onDidChangeTreeData.fire(); 
+    }
+
+    public tongleView() : void 
+    {
+        this._showAllItems = !this._showAllItems;
+
         refreshEntries();
         this._onDidChangeTreeData.fire(); 
     }
@@ -97,7 +106,6 @@ export class ExplorerProvider implements TreeDataProvider<FileEntry>
             }
             else
             {
-                var retDir = this.computeDirPercentage(file);
                 entry = new FileEntry(false,file,basename(file), this.computeDirPercentage(file) ,
                     TreeItemCollapsibleState.Collapsed,undefined);
 
@@ -107,6 +115,13 @@ export class ExplorerProvider implements TreeDataProvider<FileEntry>
                 {
                     continue;
                 }
+            }
+
+            // Remove items without nothing if is requested
+
+            if (!this._showAllItems && !entry.info.something && entry.info.percentage >=100)
+            {
+                continue;
             }
 
             tree.push(entry);
