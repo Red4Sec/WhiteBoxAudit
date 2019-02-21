@@ -21,6 +21,8 @@ WhiteBox Audit Extension
 
 This extension will allow you to keep track of both the audited files and the issues found.
 
+Run your command from the command palette by pressing (`Ctrl+Shift+P` or `Cmd+Shift+P` on Mac) and typing `WhiteBoxAudit`.
+
 ![Explorer](https://i.imgur.com/jDvjAa1.png)
 ![Menu](https://i.imgur.com/XMFyta5.png)
 
@@ -46,3 +48,6 @@ In this version (0.0.1) you must debug the extension to use it.
 * Run your command from the command palette by pressing (`Ctrl+Shift+P` or `Cmd+Shift+P` on Mac) and typing `WhiteBoxAudit`.
 * **Enjoy!**
 
+***
+## Special Thanks
+Icons Designed by Smashicons & Vectors-market from Flaticon
