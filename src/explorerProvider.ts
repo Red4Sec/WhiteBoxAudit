@@ -226,9 +226,8 @@ export class ExplorerProvider implements TreeDataProvider<FileEntry>
         }
 
         var smallfile = file.substr(this.workspaceRoot.length + 1);
-        var files = Object.getOwnPropertyNames(dataSource.files);
 
-        for (let entry of files) 
+        for (let entry of Object.getOwnPropertyNames(dataSource.files))
         {
             if (smallfile === entry)
             {

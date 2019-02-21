@@ -2,11 +2,12 @@
 
 // Imports
 
-import { commands , ExtensionContext , window , workspace , Range, Position , QuickInput } from 'vscode';
+import { commands , ExtensionContext , window , workspace , Range, Position , QuickInput, OutputChannel } from 'vscode';
 
 import { goodReviewedDecorationType , somethingFoudDecorationType } from './style';
 import { ExplorerProvider } from './explorerProvider';
 import { refreshEntries , dataSource, saveDataSource , dataSourcePath } from './dataSource';
+import { debug } from 'util';
 
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
@@ -39,6 +40,13 @@ export function activate(context: ExtensionContext)
 	context.subscriptions.push(commands.registerCommand('whiteboxauditExplorer.tongleView', function () 
 	{
 		explorer.tongleView();
+	}));
+
+	context.subscriptions.push(commands.registerCommand('whiteboxauditExplorer.report', function () 
+	{
+		var out = window.createOutputChannel("report");
+		doReport(out);
+		out.show();
 	}));
 
 	let activeEditor = window.activeTextEditor;
@@ -80,6 +88,33 @@ export function activate(context: ExtensionContext)
 		}
 
 		timeout = setTimeout(updateDecorations, 500);
+	}
+
+	function doReport(out : OutputChannel)
+	{
+		if (dataSource === undefined || dataSource.files === undefined)
+		{
+			return;
+		}
+
+        for (let entry of Object.getOwnPropertyNames(dataSource.files))
+        {
+			var something = false;
+			
+			for (let audit of dataSource.files[entry].audit) 
+			{
+				if (audit.style === "something")
+				{
+					if (!something)
+					{
+						out.appendLine(entry);
+					}
+
+					something = true;
+					out.appendLine("  " + audit.from + "-"+ (audit.from+audit.length) +" => "+ audit.message);
+				}
+			}
+        }
 	}
 
 	function updateDecorations() 

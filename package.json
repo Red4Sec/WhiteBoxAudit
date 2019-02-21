@@ -44,6 +44,11 @@
 					"command": "whiteboxauditExplorer.tongleView",
 					"when": "view == whiteboxexplorer",
 					"group": "navigation"
+				},
+				{
+					"command": "whiteboxauditExplorer.report",
+					"when": "view == whiteboxexplorer",
+					"group": "navigation"
 				}
 			]
 		},
@@ -81,6 +86,15 @@
 				{
 					"light": "resources/light/view.svg",
 					"dark": "resources/dark/view.svg"
+				}
+			},
+			{
+				"command": "whiteboxauditExplorer.report",
+				"title": "WhiteBox Audit - Report",
+				"icon": 
+				{
+					"light": "resources/light/report.svg",
+					"dark": "resources/dark/report.svg"
 				}
 			},
 			{
