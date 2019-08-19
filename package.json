@@ -2,7 +2,7 @@
 	"name": "whiteboxaudit",
 	"displayName": "WhiteBoxAudit",
 	"description": "VSCode Plugin for White Box Audits",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"publisher": "red4sec",
 	"engines": { "vscode": "^1.31.0" },
 	"categories": [ "Other" ],
@@ -62,6 +62,13 @@
 					"type": "boolean",
 					"default": "true",
 					"description": "Ask messages for good review"
+				},
+				"exportFormat":
+				{
+					"type": "string",
+    				"enum": ["csv", "txt"],
+					"default": "txt",
+					"description": "Report format"
 				},
 				"goodColor":
 				{

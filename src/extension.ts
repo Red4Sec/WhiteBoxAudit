@@ -97,6 +97,8 @@ export function activate(context: ExtensionContext)
 			return;
 		}
 
+		var exportFormat = config.has('exportFormat') ? config.get('exportFormat') : 'txt';
+
         for (let entry of Object.getOwnPropertyNames(dataSource.files))
         {
 			var something = false;
@@ -105,13 +107,27 @@ export function activate(context: ExtensionContext)
 			{
 				if (audit.style === "something")
 				{
-					if (!something)
+					switch(exportFormat)
 					{
-						out.appendLine(entry);
+						case 'csv':
+							{
+								out.appendLine(entry + "\t" + audit.from + "-"+ (audit.from+audit.length) +"\t"+ audit.message);
+								break;
+							}
+						case 'txt':
+						default:
+							{
+								if (!something)
+								{
+									out.appendLine(entry);
+								}
+			
+								out.appendLine("  " + audit.from + "-"+ (audit.from+audit.length) +" => "+ audit.message);
+								break;
+							}
 					}
 
 					something = true;
-					out.appendLine("  " + audit.from + "-"+ (audit.from+audit.length) +" => "+ audit.message);
 				}
 			}
         }
