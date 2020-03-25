@@ -4,37 +4,34 @@
 	"description": "VSCode Plugin for White Box Audits",
 	"version": "0.0.3",
 	"publisher": "red4sec",
-	"engines": { "vscode": "^1.31.0" },
-	"categories": [ "Other" ],
-	"repository": 
-	{
+	"engines": {
+		"vscode": "^1.31.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"repository": {
 		"type": "git",
 		"url": "https://github.com/Red4Sec/WhiteBoxAudit"
 	},
 	"homepage": "https://github.com/Red4Sec/WhiteBoxAudit",
-	"activationEvents": 
-	[
-		"onCommand:extension.WhiteBoxAudit.ReviewSomething" ,
-		"onCommand:extension.WhiteBoxAudit.ReviewGood" ,
+	"activationEvents": [
+		"onCommand:extension.WhiteBoxAudit.ReviewSomething",
+		"onCommand:extension.WhiteBoxAudit.ReviewGood",
 		"onView:whiteboxexplorer"
 	],
 	"main": "./out/extension.js",
-	"contributes": 
-	{
-		"views": 
-		{
-			"explorer": 
-			[
+	"contributes": {
+		"views": {
+			"explorer": [
 				{
 					"id": "whiteboxexplorer",
 					"name": "White Box Audit"
 				}
 			]
 		},
-		"menus": 
-		{
-			"view/title": 
-			[
+		"menus": {
+			"view/title": [
 				{
 					"command": "whiteboxauditExplorer.refresh",
 					"when": "view == whiteboxexplorer",
@@ -52,45 +49,40 @@
 				}
 			]
 		},
-		"configuration": 
-		{
+		"configuration": {
 			"title": "WhiteBoxAudit",
-			"properties": 
-			{
-				"askMessageForGood":
-				{
+			"properties": {
+				"askMessageForGood": {
 					"type": "boolean",
 					"default": "true",
 					"description": "Ask messages for good review"
 				},
-				"exportFormat":
-				{
+				"exportFormat": {
 					"type": "string",
-    				"enum": ["csv", "txt"],
+					"enum": [
+						"csv",
+						"txt"
+					],
 					"default": "txt",
 					"description": "Report format"
 				},
-				"goodColor":
-				{
+				"goodColor": {
 					"type": "string",
 					"default": "#00FF0019",
 					"description": "Color for good review"
 				},
-				"somethingColor":
-				{
+				"somethingColor": {
 					"type": "string",
 					"default": "#FF000019",
 					"description": "Color for something found"
 				}
 			}
 		},
-		"commands": 
-		[
+		"commands": [
 			{
 				"command": "whiteboxauditExplorer.tongleView",
 				"title": "WhiteBox Audit - Tongle View",
-				"icon": 
-				{
+				"icon": {
 					"light": "resources/light/view.svg",
 					"dark": "resources/dark/view.svg"
 				}
@@ -98,8 +90,7 @@
 			{
 				"command": "whiteboxauditExplorer.report",
 				"title": "WhiteBox Audit - Report",
-				"icon": 
-				{
+				"icon": {
 					"light": "resources/light/report.svg",
 					"dark": "resources/dark/report.svg"
 				}
@@ -107,8 +98,7 @@
 			{
 				"command": "whiteboxauditExplorer.refresh",
 				"title": "WhiteBox Audit - Refresh",
-				"icon": 
-				{
+				"icon": {
 					"light": "resources/light/refresh.svg",
 					"dark": "resources/dark/refresh.svg"
 				}
@@ -123,20 +113,19 @@
 			}
 		]
 	},
-	"scripts": 
-	{
+	"scripts": {
 		"vscode:prepublish": "npm run compile",
 		"compile": "tsc -p ./",
 		"watch": "tsc -watch -p ./",
 		"postinstall": "node ./node_modules/vscode/bin/install",
 		"test": "npm run compile && node ./node_modules/vscode/bin/test"
 	},
-	"devDependencies": 
-	{
-		"typescript": "^3.3.1",
-		"vscode": "^1.1.28",
-		"tslint": "^5.12.1",
-		"@types/node": "^8.10.25",
-		"@types/mocha": "^2.2.42"
-	}
+	"devDependencies": {
+		"@types/mocha": "^2.2.42",
+		"@types/node": "^8.10.59",
+		"tslint": "^5.20.1",
+		"typescript": "^3.8.3",
+		"vscode": "^1.1.36"
+	},
+	"dependencies": {}
 }
