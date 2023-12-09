@@ -1,6 +1,7 @@
 <p align="center">
-  <a href="https://red4sec.com" target="_blank"><img src="https://red4sec.com/images/logo.png" width="200px"></a>
+  <a href="https://red4sec.com" target="_blank"><img src="https://avatars0.githubusercontent.com/u/33096324?s=200&v=4" width="200px"></a>
 </p>
+
 <h1 align="center">
 WhiteBox Audit Extension
 </h1>
